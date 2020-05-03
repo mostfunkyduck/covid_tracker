@@ -25,14 +25,13 @@ class JHU (Data):
     def process(self):
         json = self.pull().json()
         for unit in json:
-            print(unit)
             self.gauges["deaths"].labels(country=unit["country"], province=unit["province"], source="JHU").set(unit["stats"]["deaths"], )
             self.gauges["confirmed"].labels(source="JHU", country=unit["country"], province=unit["province"]).set(unit["stats"]["confirmed"])
             self.gauges["recovered"].labels(source="JHU", country=unit["country"], province=unit["province"]).set(unit["stats"]["recovered"])
 
 def main():
     
-    start_http_server(8000)
+    start_http_server(9002)
     jhu = JHU()
     while True:
         jhu.process()
