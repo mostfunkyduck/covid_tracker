@@ -3,12 +3,6 @@ import requests
 import json
 import time
 
-keys = {
-    "covid_tracker_confirmed": "confirmed",
-    "covid_tracker_deaths": "deaths",
-    "covid_tracker_recovered": "recovered"
-}
-
 class Data:
     def pull(self):
         return requests.get(self.url)
