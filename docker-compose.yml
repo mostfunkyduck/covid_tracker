@@ -4,5 +4,6 @@ services:
   covid_tracker:
     image: yaakov/covid_tracker
     build: .
+    restart: always
     ports:
       - "9002:9002"
