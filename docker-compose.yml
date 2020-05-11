@@ -2,7 +2,7 @@
 version: '3'
 services:
   covid_tracker:
-    image: yaakov/covid_tracker
+    image: mostfunkyduck/covid_tracker
     build: .
     restart: always
     ports:
